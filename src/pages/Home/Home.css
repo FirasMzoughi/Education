@@ -1,0 +1,118 @@
+.home-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center content */
+  padding-top: 90px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.content-with-background {
+  background-image: url('../../assets/em.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding: 40px; /* Adjust padding for better spacing */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 1400px; /* Limit the width for better appearance */
+  margin-top: -10px; /* Adjust to bring closer to the header */
+}
+
+.content-with-background h1 {
+  font-size: 3.1em; /* Adjusted font size for main heading */
+  margin-bottom: 10px;
+}
+
+.content-with-background h2 {
+  font-size: 2.4em; /* Adjusted font size for subheading */
+  margin-bottom: 20px;
+}
+
+.content-with-background p {
+  font-size: 1.9em; /* Adjusted font size for paragraph */
+  margin-bottom: 30px;
+}
+
+.start-button {
+  font-size: 2.2em; /* Adjusted font size for button */
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-button:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* Slight upward movement on hover */
+}
+
+.about-section, .platform-section, .content-section, .offers-section {
+  background-color: #f0f0f0; /* Light grey background color */
+  padding: 40px; /* Adjust padding for better spacing */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+  text-align: center;
+  color: #333; /* Dark text color for readability */
+  width: 100%;
+  max-width: 1400px; /* Limit the width for better appearance */
+  margin-top: 20px; /* Add some spacing from the previous section */
+}
+
+.about-section h2, .platform-section h2, .content-section h2, .offers-section h2 {
+  font-size: 2.8em; /* Adjust font size for heading */
+  margin-bottom: 20px;
+}
+
+.about-section p, .platform-section p, .content-section p, .offers-section p {
+  font-size: 1.8em; /* Adjust font size for paragraph */
+  margin-bottom: 20px;
+}
+
+.subscription-plans {
+  display: flex;
+  justify-content: center; /* Center the plans */
+  gap: 20px; /* Space between the plans */
+}
+
+.plan {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+  text-align: center;
+  width: 300px; /* Fixed width for plans */
+}
+
+.plan h3 {
+  font-size: 2.4em; /* Adjusted font size for plan heading */
+  margin-bottom: 10px;
+}
+
+.plan p {
+  font-size: 1.6em; /* Adjusted font size for plan paragraph */
+  margin-bottom: 20px;
+}
+
+.subscribe-button {
+  font-size: 1.6em; /* Adjusted font size for button */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Slight upward movement on hover */
+}

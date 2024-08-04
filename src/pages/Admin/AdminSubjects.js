@@ -3,17 +3,20 @@ import AdminNavbar from '../../component/NavBar/AdminNavbar';
 import './AdminSubjects.css';
 
 const AdminSubjects = () => {
+  const classesOptions = ['الرابعة اساسي', 'الخامسة', 'السادسة'];
+  const [selectedClass, setSelectedClass] = useState('');
   const [subjects, setSubjects] = useState([]);
   const [newSubject, setNewSubject] = useState('');
   const [selectedSubjectIndex, setSelectedSubjectIndex] = useState(null);
   const [newPeriod, setNewPeriod] = useState('');
   const [selectedPeriodIndex, setSelectedPeriodIndex] = useState(null);
   const [newLesson, setNewLesson] = useState({ name: '', videoLink: '', pptLink: '' });
-  const [editMode, setEditMode] = useState(false);
 
   const handleAddSubject = () => {
-    setSubjects([...subjects, { name: newSubject, periods: [] }]);
-    setNewSubject('');
+    if (selectedClass) {
+      setSubjects([...subjects, { className: selectedClass, name: newSubject, periods: [] }]);
+      setNewSubject('');
+    }
   };
 
   const handleDeleteSubject = (index) => {
@@ -73,30 +76,48 @@ const AdminSubjects = () => {
       <div className="admin-subjects-content">
         <h1>إدارة المواد والفترات والدروس</h1>
 
-        {/* Subject Management */}
+        {/* Class Selection */}
         <div className="section">
-          <h2>إدارة المواد</h2>
-          <input
-            type="text"
-            placeholder="اسم المادة"
-            value={newSubject}
-            onChange={(e) => setNewSubject(e.target.value)}
-          />
-          <button onClick={handleAddSubject}>إضافة المادة</button>
-          <div className="subjects-list">
-            {subjects.map((subject, index) => (
-              <div key={index} className="subject-item">
-                <input
-                  type="text"
-                  value={subject.name}
-                  onChange={(e) => handleEditSubject(index, e.target.value)}
-                />
-                <button onClick={() => handleDeleteSubject(index)}>حذف</button>
-                <button onClick={() => setSelectedSubjectIndex(index)}>اختر</button>
-              </div>
+          <h2>إدارة الفصول</h2>
+          <select
+            value={selectedClass}
+            onChange={(e) => setSelectedClass(e.target.value)}
+          >
+            <option value="" disabled>اختر الفصل</option>
+            {classesOptions.map((cls, index) => (
+              <option key={index} value={cls}>{cls}</option>
             ))}
-          </div>
+          </select>
         </div>
+
+        {/* Subject Management */}
+        {selectedClass && (
+          <div className="section">
+            <h2>إدارة المواد</h2>
+            <input
+              type="text"
+              placeholder="اسم المادة"
+              value={newSubject}
+              onChange={(e) => setNewSubject(e.target.value)}
+            />
+            <button onClick={handleAddSubject}>إضافة المادة</button>
+            <div className="subjects-list">
+              {subjects
+                .filter(subject => subject.className === selectedClass)
+                .map((subject, index) => (
+                  <div key={index} className="subject-item">
+                    <input
+                      type="text"
+                      value={subject.name}
+                      onChange={(e) => handleEditSubject(index, e.target.value)}
+                    />
+                    <button onClick={() => handleDeleteSubject(index)}>حذف</button>
+                    <button onClick={() => setSelectedSubjectIndex(index)}>اختر</button>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
 
         {/* Period Management */}
         {selectedSubjectIndex !== null && (

@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import Header from '../../component/NavBar/header';
 import Footer from '../../component/Footer/footer';
 import './Home.css';
-import backgroundImage from '../../assets/em.avif';
+import backgroundImage from '../../assets/em.avif'; 
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <div id="home" className="home-content">
+      <div className="home-content">
         <div className="content-with-background" style={{ backgroundImage: `url(${backgroundImage})` }}>
           <h1>وليد أكاديمي</h1>
           <h2>منصّة تعليميّة عبر الإنترنت في تونس</h2>
@@ -24,7 +24,6 @@ const Home = () => {
           <p>
             وليد أكاديمي هي منصّة تعليمية عبر الإنترنت تهدف إلى توفير دروس دعم بجودة عالية
             لطلاب المدارس في تونس. نحن نقدم مواد تعليمية تشمل الرياضيات والعلوم 
-            
           </p>
         </div>
         <div id="platform" className="platform-section">

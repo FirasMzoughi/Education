@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className="home-content">
+      <div className="home-content" id='home'>
         <div className="content-with-background" style={{ backgroundImage: `url(${backgroundImage})` }}>
           <h1>وليد أكاديمي</h1>
           <h2>منصّة تعليميّة عبر الإنترنت في تونس</h2>
@@ -17,7 +17,7 @@ const Home = () => {
             تمتع الآن بدروس دعم عبر الإنترنت في جميع المواد لتلاميذ المدارس في جميع المستويات 
             (من الاولى ابتدائي الى السادسة)
           </p>
-          <Link to="#" className="start-button">ابدأ الآن</Link>
+          <Link to="/register" className="start-button">ابدأ الآن</Link>
         </div>
         <div id="about" className="about-section">
           <h2>من نحن؟</h2>
@@ -48,15 +48,11 @@ const Home = () => {
             على منصتنا. نقدم خطط اشتراك مرنة لتناسب احتياجاتك.
           </p>
           <div className="subscription-plans">
-            <div className="plan">
-              <h3>الاشتراك الشهري</h3>
-              <p>تمتع بجميع المزايا التعليمية لدينا لمدة شهر.</p>
-              <Link to="#" className="subscribe-button">اشترك الآن</Link>
-            </div>
+           
             <div className="plan">
               <h3>الاشتراك السنوي</h3>
               <p>احصل على خصم خاص عند الاشتراك لمدة سنة كاملة.</p>
-              <Link to="#" className="subscribe-button">اشترك الآن</Link>
+              <Link to="/login" className="subscribe-button">اشترك الآن</Link>
             </div>
           </div>
         </div>

@@ -18,6 +18,7 @@ import AdminChangePassword from './pages/Admin/AdminChangePassword';
 import AdminProfileEdit from './pages/Admin/AdminProfileEdit';
 import AdminSubjects from './pages/Admin/AdminSubjects';
 import AdminHelp from './pages/Admin/AdminHelp';
+import AdminUsers from './pages/Admin/AdminUsers';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/adminprofile/changepassword" element={<AdminChangePassword />} /> {/* Add the change password route */}
           <Route path="/adminsubjects" element={<AdminSubjects />} />
           <Route path="/adminhelp" element={<AdminHelp />} />
+          <Route path="/adminusers" element={<AdminUsers />} />
         </Routes>
       </Router>
     </div>

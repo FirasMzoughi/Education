@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './AdminNavbar.css';
 import logo from '../../assets/logo.png'; // Ensure the logo image is correctly placed
-import { FiMenu, FiHome, FiUser, FiBook, FiHelpCircle, FiSearch, FiLogOut, FiClipboard } from 'react-icons/fi'; // Import icons from react-icons
+import { FiMenu, FiHome, FiUser, FiClipboard, FiHelpCircle, FiSearch, FiLogOut, FiUsers } from 'react-icons/fi'; // Import icons from react-icons
 import facebookLogo from '../../assets/fb.png';
 import instagramLogo from '../../assets/ig.png';
 import tiktokLogo from '../../assets/tiktok.png';
@@ -50,12 +50,17 @@ const AdminNavbar = () => {
           >
             <FiUser size={20} /><span>ملفي الشخصي</span>
           </Link>
-         
           <Link
             to="/adminsubjects"
             className={location.pathname === '/adminsubjects' ? 'active' : ''}
           >
             <FiClipboard size={20} /><span>المواد</span>
+          </Link>
+          <Link
+            to="/adminusers"
+            className={location.pathname === '/adminusers' ? 'active' : ''}
+          >
+            <FiUsers size={20} /><span>إدارة المستخدمين</span>
           </Link>
           <Link
             to="/adminhelp"

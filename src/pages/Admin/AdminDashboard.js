@@ -19,11 +19,7 @@ const AdminDashboard = () => {
             <p>عدد المواد: 2</p>
             <p>المواد مكتملة: 0</p>
           </div>
-          <div className="widget">
-            <h2>إعدادات الموقع</h2>
-            <button>تحديث البيانات</button>
-            <button>إضافة مادة جديدة</button>
-          </div>
+          
         </div>
       </div>
     </div>
